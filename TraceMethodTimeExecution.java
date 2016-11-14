@@ -7,7 +7,7 @@ import org.aspectj.lang.Signature;
 aspect Trace{
 
         private static Logger logger = Logger.getLogger("Tracing1");
-		long startTime = 0L;#
+		long startTime = 0L;
 		long endTime = 0L;
 		
 		Timer timerAfer;
@@ -44,7 +44,7 @@ aspect Trace{
                 String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
                 Logger.getLogger("Tracing1").log(
                         Level.INFO,
-                        "Time - " + endTime - startTime " MilliS - Call from "
+                        "Time -> " + (endTime - startTime) + " MilliS -> Call from "
                         +  sourceName
                         +" line " +
                         line

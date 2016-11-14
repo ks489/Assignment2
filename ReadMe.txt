@@ -11,3 +11,15 @@ java -javaagent:../aspectjweaver.jar -cp ../aspects.jar:target/classes/:target/t
 //This one is correct
 //Not to self on windows you need ; instead of : to separate 
 java -javaagent:../aspectjweaver.jar -cp ../aspects.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
+
+
+
+
+
+---------------------------
+ajc -cp C:\aspectj1.8\lib\aspectjrt.jar -outxml -outjar TraceMethodTimeExecutionAspects.jar TraceMethodTimeExecution.java
+java -javaagent:../aspectjweaver.jar -cp ../TraceMethodTimeExecutionAspects.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
+
+
+ajc -cp C:\aspectj1.8\lib\aspectjrt.jar -outxml -outjar TraceMethodDependencyCallsAspects.jar TraceMethodDependencyCalls.java
+java -javaagent:../aspectjweaver.jar -cp ../TraceMethodDependencyCallsAspects.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
