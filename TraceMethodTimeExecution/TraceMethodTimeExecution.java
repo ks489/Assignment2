@@ -44,7 +44,8 @@ aspect Trace{
                 String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
                 Logger.getLogger("tmteTrace").log(
                         Level.INFO,
-                        "Time -> " + (endTime - startTime) + " Nano Seconds -> Call from "
+                        //"Time -> " + (endTime - startTime) + " Nano Seconds -> Call from "
+						"Execution -> "
                         +  sourceName
                         +" line " +
                         line

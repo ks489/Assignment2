@@ -35,7 +35,7 @@ aspect Trace{
                 String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
                 Logger.getLogger("tmdcTrace").log(
                         Level.INFO,
-                        "Call from "
+                        "Call -> "
                         +  sourceName
                         +" line " +
                         line
