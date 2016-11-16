@@ -6,12 +6,12 @@ import org.aspectj.lang.Signature;
 
 aspect Trace{
 
-        private static Logger logger = Logger.getLogger("Tracing");
+        private static Logger logger = Logger.getLogger("tmdcTrace");
 
         public Trace(){
 
         try{
-                FileHandler handler=new FileHandler("trace.log",false);
+                FileHandler handler=new FileHandler("tmdcTrace.log",false);
 
                 logger.addHandler(handler);
 
@@ -27,13 +27,13 @@ aspect Trace{
 
         }
 
-        pointcut traceMethods() : (execution(* *(..))&& !cflow(within(Trace)));
+        pointcut traceMethods() : (call(* *(..))&& !cflow(within(Trace)));
 
         before(): traceMethods(){
                 Signature sig = thisJoinPointStaticPart.getSignature();
                 String line =""+ thisJoinPointStaticPart.getSourceLocation().getLine();
                 String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
-                Logger.getLogger("Tracing").log(
+                Logger.getLogger("tmdcTrace").log(
                         Level.INFO,
                         "Call from "
                         +  sourceName

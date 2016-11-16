@@ -6,7 +6,7 @@ import org.aspectj.lang.Signature;
 
 aspect Trace{
 
-        private static Logger logger = Logger.getLogger("Tracing1");
+        private static Logger logger = Logger.getLogger("tmteTrace");
 		long startTime = 0L;
 		long endTime = 0L;
 		
@@ -14,7 +14,7 @@ aspect Trace{
         public Trace(){
 
         try{
-                FileHandler handler=new FileHandler("trace.log",false);
+                FileHandler handler=new FileHandler("tmteTrace.log",false);
 
                 logger.addHandler(handler);
 
@@ -33,18 +33,18 @@ aspect Trace{
         pointcut traceMethods() : (execution(* *(..))&& !cflow(within(Trace)));
 
         before(): traceMethods(){
-				startTime = System.currentTimeMillis();
+				startTime = System.nanoTime();
                 
         }
 		
 		after(): traceMethods(){
-				endTime = System.currentTimeMillis();
+				endTime = System.nanoTime();
                 Signature sig = thisJoinPointStaticPart.getSignature();
                 String line =""+ thisJoinPointStaticPart.getSourceLocation().getLine();
                 String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
-                Logger.getLogger("Tracing1").log(
+                Logger.getLogger("tmteTrace").log(
                         Level.INFO,
-                        "Time -> " + (endTime - startTime) + " MilliS -> Call from "
+                        "Time -> " + (endTime - startTime) + " Nano Seconds -> Call from "
                         +  sourceName
                         +" line " +
                         line
