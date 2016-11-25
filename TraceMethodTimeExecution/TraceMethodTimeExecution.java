@@ -43,14 +43,21 @@ aspect Trace{
 		Signature sig = thisJoinPointStaticPart.getSignature();
 		String line =""+ thisJoinPointStaticPart.getSourceLocation().getLine();
 		String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
-		Logger.getLogger("tmteTrace1").log(
-				Level.INFO,
-				//"Time -> " + (endTime - startTime) + " Nano Seconds -> Call from "
-				"Execution -> "
-				+  sourceName
-				+" line " +
-				line
-				+" to " +sig.getDeclaringTypeName() + "." + sig.getName() 
-		);			
+		Logger.getLogger("tmteTrace1").log(Level.INFO,
+				(endTime - startTime) + "," +
+				sig.getDeclaringTypeName() + "," + 
+				//+ " line " + line
+				sig.getName() 
+		);
+		
+		//Logger.getLogger("tmteTrace1").log(
+		//		Level.INFO,
+		//		"Time -> " + (endTime - startTime) + " Nano Seconds -> " +
+		//		"Execution -> "
+		//		+  sourceName
+		//		+" line " +
+		//		line
+		//		+" to " +sig.getDeclaringTypeName() + "." + sig.getName() 
+		//);					
 	}
 }
