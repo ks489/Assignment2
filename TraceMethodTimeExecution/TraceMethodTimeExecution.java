@@ -6,7 +6,7 @@ import org.aspectj.lang.Signature;
 
 aspect Trace{
 
-	private static Logger logger = Logger.getLogger("tmteTrace1");
+	private static Logger logger = Logger.getLogger("tmteTrace");
 	long startTime = 0L;
 	long endTime = 0L;
 	
@@ -14,7 +14,7 @@ aspect Trace{
 	public Trace(){
 
 	try{
-		FileHandler handler=new FileHandler("tmteTrace1.log",false);
+		FileHandler handler=new FileHandler("tmteTrace.log",false);
 
 		logger.addHandler(handler);
 
@@ -28,9 +28,7 @@ aspect Trace{
 	catch(Exception e){}
 
 	}
-
-	//pointcut traceMethods() : (execution(* *(..))&& !cflow(within(Trace)));
-	//pointcut traceMethods() : (execution(* org.apache.commons.net.ftp.*.*(..))&& !cflow(within(Trace)));
+	
 	pointcut traceMethods() : (execution(* org.apache.commons.net..*(..))&& !cflow(within(Trace)));
 	
 	before(): traceMethods(){
@@ -43,21 +41,11 @@ aspect Trace{
 		Signature sig = thisJoinPointStaticPart.getSignature();
 		String line =""+ thisJoinPointStaticPart.getSourceLocation().getLine();
 		String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
-		Logger.getLogger("tmteTrace1").log(Level.INFO,
+		Logger.getLogger("tmteTrace").log(Level.INFO,
 				(endTime - startTime) + "," +
 				sig.getDeclaringTypeName() + "," + 
-				//+ " line " + line
 				sig.getName() 
 		);
-		
-		//Logger.getLogger("tmteTrace1").log(
-		//		Level.INFO,
-		//		"Time -> " + (endTime - startTime) + " Nano Seconds -> " +
-		//		"Execution -> "
-		//		+  sourceName
-		//		+" line " +
-		//		line
-		//		+" to " +sig.getDeclaringTypeName() + "." + sig.getName() 
-		//);					
+					
 	}
 }

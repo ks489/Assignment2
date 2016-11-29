@@ -13,28 +13,32 @@ java -javaagent:../aspectjweaver.jar -cp ../aspects.jar:target/classes/:target/t
 java -javaagent:../aspectjweaver.jar -cp ../aspects.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
 
 
-
+WORK PC
 ======Reusable project commands=======
 ajc -cp ..\Libraries\aspectjrt.jar -outxml -outjar tmteTracer.jar TraceMethodTimeExecution.java
 //MATHS - LAB
 java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
 //FTP - ASSIGNMENT
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigFunctionalTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPCommandTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.ListingFunctionalTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.TestConnectTimeout
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigFunctionalTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPCommandTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.ListingFunctionalTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodTimeExecution/tmteTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.TestConnectTimeout
 
 ajc -cp ..\Libraries\aspectjrt.jar -outxml -outjar tmdcTracer.jar TraceMethodDependencyCalls.java
 //MATHS - LAB
 java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.math4.util.BigRealTest
 //FTP - ASSIGNMENT
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigFunctionalTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPCommandTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.ListingFunctionalTest
-java -javaagent:../Assignment2/Tracer/Libraries/aspectjweaver.jar -cp ../Assignment2/Tracer/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../junit-4.12.jar;../hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.TestConnectTimeout
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigFunctionalTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientConfigTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPClientTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.FTPCommandTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.ListingFunctionalTest
+java -javaagent:../Assignment2/Libraries/aspectjweaver.jar -cp ../Assignment2/TraceMethodDependencyCalls/tmdcTracer.jar;target/classes/;target/test-classes/;../Assignment2/Libraries/junit-4.12.jar;../Assignment2/Libraries/hamcrest-core-1.3.jar org.junit.runner.JUnitCore org.apache.commons.net.ftp.TestConnectTimeout
+
+
+HOME PC
+
 
 

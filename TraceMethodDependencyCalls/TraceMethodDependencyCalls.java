@@ -1,7 +1,7 @@
 package aspects;
 
 import java.util.logging.*;
-import java.util.Stack.*;
+import java.util.Stack;
 
 import org.aspectj.lang.Signature;
 
@@ -31,26 +31,25 @@ aspect Trace{
 
 	pointcut callMethods() : (call(* org.apache.commons.net..*(..))&& !cflow(within(Trace)));
 
-	before(): traceMethods(){
+	before(): callMethods(){
 		
 		Signature sig = thisJoinPointStaticPart.getSignature();				
 		String line =""+ thisJoinPointStaticPart.getSourceLocation().getLine();
 		String sourceName = thisJoinPointStaticPart.getSourceLocation().getWithinType().getCanonicalName();
 		
+		globalMethods.push(sig);
 		if(!globalMethods.empty()){
 			
 			Logger.getLogger("tmdcTrace1").log(Level.INFO,
-					"Call -> "
-					+  sourceName
-					+" line " +
-					line
-					+" to " +sig.getDeclaringTypeName() + "." + sig.getName()
+					sourceName +
+					"->" +
+					sig.getDeclaringTypeName() + "." + sig.getName()
 			);				
 		}
-		globalMethods.push(sig);
+		
 	}
 	
-	after(): traceMethods(){
+	after(): callMethods(){
 		globalMethods.pop();
 			
 	}
